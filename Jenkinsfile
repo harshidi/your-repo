@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('your-image-name')
+                    docker.build('Hello-World')
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://us.icr.io', 'IBM_CLOUD_API_KEY') {
-                        docker.image('your-image-name').push('latest')
+                        docker.image('Hello-World').push('latest')
                     }
                 }
             }
