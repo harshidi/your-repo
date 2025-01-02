@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('Hello-World')
+                    docker.build('pedantic_perlman
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://us.icr.io', 'IBM_CLOUD_API_KEY') {
-                        docker.image('Hello-World').push('latest')
+                        docker.image('pedantic_perlman').push('latest')
                     }
                 }
             }
